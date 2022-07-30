@@ -1,7 +1,9 @@
+require('dotenv').config()
 const Moralis = require('moralis/node')
 
-const serverUrl = 'https://sswidcjybizq.usemoralis.com:2053/server'
-const appId = '0EVSmvKtyknEd6j63BRguEgP7zzamgQNlUTKrtb0'
+const serverUrl = process.env.MORALIS_SERVER_URL
+const appId = process.env.MORALIS_APP_ID
+
 Moralis.start({
   serverUrl,
   appId
@@ -151,7 +153,6 @@ async function generateRarity () {
   }
   
   return true
-
 }
 
 generateRarity()
